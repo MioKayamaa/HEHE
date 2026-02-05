@@ -73,16 +73,18 @@ function handleNoClick() {
     const yesButton = document.querySelector('.yes-button');
     const gif = document.getElementById('main-gif');
 
-  
+    
     noButton.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
 
+    
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
     yesButton.style.fontSize = `${currentSize * 1.3}px`;
 
     
-    gif.src = "gif2.gif";
+    gif.src = "gif2.gif?" + new Date().getTime(); 
 }
+
 
 
 function handleYesClick() {
